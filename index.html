@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Schrolling Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Trung Thu</a>
+        
+    </header>
+    <section>
+        <img src="stars.png" alt="" id="stars">
+        <img src="moon.png" alt="" id="moon">
+        <img src="mountains_behind.png" alt="" id="mountains_behind">
+    
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png" alt="" id="mountains_front">
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Trung Thu</h2>
+        <p>Cho đến bây giờ, vẫn chưa xác minh rõ ràng được Tết Trung thu bắt nguồn từ văn minh lúa nước của Việt Nam hay tiếp nhận từ văn hóa Trung Hoa. Có ba truyền thuyết chính được người ta biết đến nhiều nhất để nói về Trung thu đó là Hằng Nga và Hậu Nghệ, vua Đường Minh Hoàng lên cung trăng và Sự tích về chú Cuội của Việt Nam.
+        <br><br>
+        Theo các nhà khảo cổ thì hình ảnh về Trung thu đã được in trên mặt trống đồng Ngọc Lũ. Người Trung Hoa cổ đại cho rằng Tết Trung Thu bắt nguồn từ thời Xuân Thu. Có lẽ Trung thu được bắt đầu từ nền văn minh lúa nước của đồng bằng Nam Trung Hoa và đồng bằng châu thổ sông Hồng của Việt Nam, là một ngày lễ hội mừng thu hoạch được mùa, vào lúc nông dân nghỉ ngơi và vui chơi sau một vụ mùa.
+        <br><br>
+        Tục rước đèn có từ đời nhà Tống, do tục truyền rằng: Trong đời vua Tống Nhân Tông, có con cá chép thành yêu, cứ đêm trăng hiện lên biến thành con gái để đi hại người. Bấy giờ có viên quan Bao Công mới hạ lệnh cho dân gian làm đèn con cá giống như hình của nó rồi đem mang ra chơi ngoài đường để cho nó sợ mà không dám hại người.
+    </p>
+    </div>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll',function(){
+            let value=window.scrollY;
+            stars.style.left=value*0.25+'px';
+            moon.style.top=value*1.05+'px';
+            mountains_behind.style.top=value*0.5+'px';
+            mountains_front.style.top=value*0+'px';
+            text.style.marginRight=value*4+'px';
+            text.style.marginTop=value*1.5+'px';
+            btn.style.marginTop=value*1.5+'px';
+            header.style.top=value*0.5+'px';
+
+        })
+    </script>
+</body>
+</html>
